@@ -48,9 +48,12 @@ def parse(opt):
             lg.info('Create directory: {}'.format(path)) 
     
     # solver
-    args['solver']['lr'] = opt.lr
-    args['solver']['qat_path'] = opt.qat_path
-    args['solver']['resume_path'] = opt.resume_path
+    if opt.lr:
+        args['solver']['lr'] = opt.lr
+    if opt.qat_path:
+        args['solver']['qat_path'] = opt.qat_path
+    if opt.resume_path:
+        args['solver']['resume_path'] = opt.resume_path
 
     # GPU environment
     os.environ['CUDA_VISIBLE_DEVICES'] = opt.gpu_ids

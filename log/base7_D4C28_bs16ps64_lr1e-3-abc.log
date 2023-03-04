@@ -1,0 +1,62 @@
+2023-03-04 20:46:58 |[041]options.py  | Remove dir: [./experiment/base7_D4C28_bs16ps64_lr1e-3-abc]
+2023-03-04 20:46:58 |[048]options.py  | Create directory: ./experiment/base7_D4C28_bs16ps64_lr1e-3-abc
+2023-03-04 20:46:58 |[048]options.py  | Create directory: ./experiment/base7_D4C28_bs16ps64_lr1e-3-abc/best_status
+2023-03-04 20:46:58 |[048]options.py  | Create directory: ./experiment/base7_D4C28_bs16ps64_lr1e-3-abc/visual
+2023-03-04 20:46:58 |[057]options.py  | Available gpu: 0
+2023-03-04 20:46:58 |[045]train.py    | Remove dir: [Tensorboard/base7_D4C28_bs16ps64_lr1e-3-abc]
+2023-03-04 20:46:58 |[050]train.py    | Create train dataset successfully!
+2023-03-04 20:46:58 |[051]train.py    | Training: [1000] iterations for each epoch
+2023-03-04 20:47:00 |[054]train.py    | Create val dataset successfully!
+2023-03-04 20:47:00 |[055]train.py    | Validating: [100] iterations for each epoch
+2023-03-04 20:47:00 |[058]train.py    | Preparing for experiment: [base7_D4C28_bs16ps64_lr1e-3-abc]
+2023-03-04 20:47:01 |[079]solver.py   | Create model successfully! Params: [33.46]K
+2023-03-04 20:47:01 |[062]train.py    | Start training...
+2023-03-04 21:36:53 |[060]options.py  | Available gpu: 0
+2023-03-04 21:36:53 |[048]train.py    | Create train dataset successfully!
+2023-03-04 21:36:53 |[049]train.py    | Training: [1000] iterations for each epoch
+2023-03-04 21:36:56 |[052]train.py    | Create val dataset successfully!
+2023-03-04 21:36:56 |[053]train.py    | Validating: [100] iterations for each epoch
+2023-03-04 21:36:56 |[056]train.py    | Preparing for experiment: [base7_D4C28_bs16ps64_lr1e-3-abc]
+2023-03-04 21:36:56 |[055]solver.py   | Load from checkpoint: [experiment/base7_D4C28_bs16ps64_lr1e-3-abc/state.pkl]
+2023-03-04 21:41:07 |[060]options.py  | Available gpu: 0
+2023-03-04 21:41:07 |[048]train.py    | Create train dataset successfully!
+2023-03-04 21:41:07 |[049]train.py    | Training: [1000] iterations for each epoch
+2023-03-04 21:41:08 |[052]train.py    | Create val dataset successfully!
+2023-03-04 21:41:08 |[053]train.py    | Validating: [100] iterations for each epoch
+2023-03-04 21:41:08 |[056]train.py    | Preparing for experiment: [base7_D4C28_bs16ps64_lr1e-3-abc]
+2023-03-04 21:41:08 |[055]solver.py   | Load from checkpoint: [experiment/base7_D4C28_bs16ps64_lr1e-3-abc/best_status/saved_model.pb]
+2023-03-04 21:44:37 |[060]options.py  | Available gpu: 0
+2023-03-04 21:44:37 |[048]train.py    | Create train dataset successfully!
+2023-03-04 21:44:37 |[049]train.py    | Training: [1000] iterations for each epoch
+2023-03-04 21:44:39 |[052]train.py    | Create val dataset successfully!
+2023-03-04 21:44:39 |[053]train.py    | Validating: [100] iterations for each epoch
+2023-03-04 21:44:39 |[056]train.py    | Preparing for experiment: [base7_D4C28_bs16ps64_lr1e-3-abc]
+2023-03-04 21:44:39 |[055]solver.py   | Load from checkpoint: [experiment/base7_D4C28_bs16ps64_lr1e-3-abc/best_status/]
+2023-03-04 21:44:42 |[059]solver.py   | Load checkpoint state successfully!
+2023-03-04 21:44:42 |[079]solver.py   | Create model successfully! Params: [33.46]K
+2023-03-04 21:44:42 |[060]train.py    | Start training...
+2023-03-04 21:46:22 |[148]solver.py   | Epoch:   30 | PSNR: 33.17 | Loss: 3.9119 | lr: 1.00e-03 | Best_PSNR: 33.17 in Epoch [29]
+2023-03-04 21:47:25 |[148]solver.py   | Epoch:   31 | PSNR: 33.17 | Loss: 3.8818 | lr: 1.00e-03 | Best_PSNR: 33.17 in Epoch [29]
+2023-03-04 21:48:44 |[148]solver.py   | Epoch:   32 | PSNR: 33.15 | Loss: 3.9134 | lr: 1.00e-03 | Best_PSNR: 33.17 in Epoch [29]
+2023-03-04 21:49:54 |[148]solver.py   | Epoch:   33 | PSNR: 33.13 | Loss: 3.9504 | lr: 1.00e-03 | Best_PSNR: 33.17 in Epoch [29]
+2023-03-04 21:50:57 |[148]solver.py   | Epoch:   34 | PSNR: 33.17 | Loss: 3.8916 | lr: 1.00e-03 | Best_PSNR: 33.17 in Epoch [34]
+2023-03-04 21:52:23 |[148]solver.py   | Epoch:   35 | PSNR: 33.20 | Loss: 3.9245 | lr: 1.00e-03 | Best_PSNR: 33.20 in Epoch [35]
+2023-03-04 21:53:23 |[148]solver.py   | Epoch:   36 | PSNR: 33.15 | Loss: 3.8522 | lr: 1.00e-03 | Best_PSNR: 33.20 in Epoch [35]
+2023-03-04 21:54:32 |[148]solver.py   | Epoch:   37 | PSNR: 33.15 | Loss: 3.9258 | lr: 1.00e-03 | Best_PSNR: 33.20 in Epoch [35]
+2023-03-04 21:55:39 |[148]solver.py   | Epoch:   38 | PSNR: 33.18 | Loss: 3.9005 | lr: 1.00e-03 | Best_PSNR: 33.20 in Epoch [35]
+2023-03-04 21:56:42 |[148]solver.py   | Epoch:   39 | PSNR: 33.15 | Loss: 3.9770 | lr: 1.00e-03 | Best_PSNR: 33.20 in Epoch [35]
+2023-03-04 21:58:01 |[148]solver.py   | Epoch:   40 | PSNR: 33.18 | Loss: 3.9319 | lr: 1.00e-03 | Best_PSNR: 33.20 in Epoch [35]
+2023-03-04 21:59:03 |[148]solver.py   | Epoch:   41 | PSNR: 33.18 | Loss: 3.9193 | lr: 1.00e-03 | Best_PSNR: 33.20 in Epoch [35]
+2023-03-04 22:00:04 |[148]solver.py   | Epoch:   42 | PSNR: 33.05 | Loss: 3.9036 | lr: 1.00e-03 | Best_PSNR: 33.20 in Epoch [35]
+2023-03-04 22:01:06 |[148]solver.py   | Epoch:   43 | PSNR: 33.18 | Loss: 3.9214 | lr: 1.00e-03 | Best_PSNR: 33.20 in Epoch [35]
+2023-03-04 22:02:07 |[148]solver.py   | Epoch:   44 | PSNR: 33.07 | Loss: 3.8589 | lr: 1.00e-03 | Best_PSNR: 33.20 in Epoch [35]
+2023-03-04 22:03:13 |[148]solver.py   | Epoch:   45 | PSNR: 33.21 | Loss: 3.9086 | lr: 1.00e-03 | Best_PSNR: 33.21 in Epoch [45]
+2023-03-04 22:04:19 |[148]solver.py   | Epoch:   46 | PSNR: 33.27 | Loss: 3.8958 | lr: 1.00e-03 | Best_PSNR: 33.27 in Epoch [46]
+2023-03-04 22:05:20 |[148]solver.py   | Epoch:   47 | PSNR: 33.25 | Loss: 3.8534 | lr: 1.00e-03 | Best_PSNR: 33.27 in Epoch [46]
+2023-03-04 22:06:23 |[148]solver.py   | Epoch:   48 | PSNR: 33.30 | Loss: 3.9011 | lr: 1.00e-03 | Best_PSNR: 33.30 in Epoch [48]
+2023-03-04 22:07:26 |[148]solver.py   | Epoch:   49 | PSNR: 33.31 | Loss: 3.8902 | lr: 1.00e-03 | Best_PSNR: 33.31 in Epoch [49]
+2023-03-04 22:08:30 |[148]solver.py   | Epoch:   50 | PSNR: 33.37 | Loss: 3.8232 | lr: 1.00e-03 | Best_PSNR: 33.37 in Epoch [50]
+2023-03-04 22:09:37 |[148]solver.py   | Epoch:   51 | PSNR: 33.39 | Loss: 3.8449 | lr: 1.00e-03 | Best_PSNR: 33.39 in Epoch [51]
+2023-03-04 22:10:37 |[148]solver.py   | Epoch:   52 | PSNR: 33.38 | Loss: 3.8261 | lr: 1.00e-03 | Best_PSNR: 33.39 in Epoch [51]
+2023-03-04 22:11:40 |[148]solver.py   | Epoch:   53 | PSNR: 33.40 | Loss: 3.8689 | lr: 1.00e-03 | Best_PSNR: 33.40 in Epoch [53]
+2023-03-04 22:12:44 |[148]solver.py   | Epoch:   54 | PSNR: 33.40 | Loss: 3.8317 | lr: 1.00e-03 | Best_PSNR: 33.40 in Epoch [54]

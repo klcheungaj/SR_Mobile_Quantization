@@ -106,12 +106,12 @@ dependencies:
   - sip=4.19.8=py37hf484d3e_0
   - six=1.15.0=py37h06a4308_0
   - sqlite=3.33.0=h62c20be_0
-  - tensorboard=2.4.0=pyhc547734_0
-  - tensorboard-plugin-wit=1.6.0=py_0
-  - tensorflow=2.4.1=gpu_py37ha2e99fa_0
-  - tensorflow-base=2.4.1=gpu_py37h29c2da4_0
-  - tensorflow-estimator=2.4.1=pyheb71bc4_0
-  - tensorflow-gpu=2.4.1=h30adc30_0
+  - tensorboard
+  - tensorboard-plugin-wit
+  - tensorflow
+  - tensorflow-base=2.4.1
+  - tensorflow-estimator
+  - tensorflow-gpu
   - termcolor=1.1.0=py37h06a4308_1
   - tk=8.6.10=hbc83047_0
   - tornado=6.1=py37h27cfd23_0
@@ -136,5 +136,4 @@ dependencies:
     - psutil==5.8.0
     - scipy==1.4.1
     - tb-nightly==2.3.0a20200722
-    - tensorboardx==2.1
     - tf-estimator-nightly==2.5.0.dev2021030701

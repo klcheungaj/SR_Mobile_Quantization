@@ -6,8 +6,8 @@ train: ~
 # datasets
 datasets:
   train:
-    dataroot_HR: data/DIV2K/bin/DIV2K_train_HR
-    dataroot_LR: data/DIV2K/bin/DIV2K_train_LR_bicubic/XN
+    dataroot_HR: data/DIV2K/DIV2K_train_HR
+    dataroot_LR: data/DIV2K/DIV2K_train_LR_bicubic/X2
     filename_path: data/DIV2K_train.txt
     patch_size: 64
     batch_size: 16
@@ -15,8 +15,8 @@ datasets:
     rot: true
     enlarge_times: 20
   val:
-    dataroot_HR: data/DIV2K/bin/DIV2K_train_HR
-    dataroot_LR: data/DIV2K/bin/DIV2K_train_LR_bicubic/XN
+    dataroot_HR: data/DIV2K/DIV2K_valid_HR
+    dataroot_LR: data/DIV2K/DIV2K_valid_LR_bicubic/X2
     filename_path: data/DIV2K_val.txt
     enlarge_times: 1
 
@@ -35,7 +35,6 @@ paths:
 
 # optimizer
 solver:
-  lr: !!float 1e-3
   lr_steps:
     - 120
     - 240
@@ -46,7 +45,5 @@ solver:
   epochs: 600
   workers: 8
   val_step: 1
-  resume: ~
-  resume_path: ~
-  qat: ~
+  resume_path: experiment/base7_D4C28_bs16ps64_lr1e-3-abc/best_status/
   qat_path: ~

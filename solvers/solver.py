@@ -44,7 +44,13 @@ class Solver():
         self.resume = self.opt['resume']
         self.lg = logging.getLogger(args['name'])
         self.state = {'current_epoch': -1, 'best_epoch': -1, 'best_psnr': -1}
+        test_lr = self.opt['lr']
 
+        print(f"self.solver: {args['solver']}")
+        print(f"self.resume: {self.resume}")
+        print(f"self.resume: {args['solver']['resume']}")
+        print(f"self.loss: {args['solver']['loss']}")
+        print(f"self.lr: {args['solver']['lr']}")
         if self.resume:
             self.lg.info('Load from checkpoint: [{}]'.format(self.opt['resume_path']))
             self.model = tf.keras.models.load_model(self.opt['resume_path'], custom_objects={'tf': tf})
