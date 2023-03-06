@@ -23,7 +23,7 @@ datasets:
 # networks
 networks:
   which_model: base7
-  scale: 3
+  scale: 2
   in_channels: 3
   num_fea: 28
   m: 4

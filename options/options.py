@@ -17,16 +17,18 @@ def parse(opt):
     # general settings
     args['name'] = name
 
+    # network settings
+    if opt.scale:
+        args['networks']['scale'] = opt.scale
+
     # dataset settings
     for phase, dataset_opt in args['datasets'].items():
-        dataset_opt['scale'] = opt.scale
+        dataset_opt['scale'] = args['networks']['scale']
         dataset_opt['split'] = phase
         dataset_opt['patch_size'] = opt.ps
         dataset_opt['batch_size'] = opt.bs
-        dataset_opt['dataroot_LR'] = dataset_opt['dataroot_LR'].replace('N', str(opt.scale))
+        dataset_opt['dataroot_LR'] = dataset_opt['dataroot_LR'].replace('N', str(args['networks']['scale']))
 
-    # network settings
-    args['networks']['scale'] = opt.scale
 
     # create experiment root
     args['solver']['resume'] = resume
