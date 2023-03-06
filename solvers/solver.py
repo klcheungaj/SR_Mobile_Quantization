@@ -12,10 +12,17 @@ import os
 import os.path as osp
 import pickle
 
+from tensorflow import keras
 from tensorflow.keras.layers import Lambda, Input, InputLayer
 from tensorflow.keras.models import Model, load_model
 
 import tensorflow_model_optimization as tfmot
+
+def PSNR(super_resolution, high_resolution):
+    """Compute the peak signal-to-noise ratio, measures quality of image."""
+    # Max value of pixel is 255
+    psnr_value = tf.image.psnr(high_resolution, super_resolution, max_val=255)[0]
+    return psnr_value
 
 class NoOpQuantizeConfig(tfmot.quantization.keras.QuantizeConfig):
     def get_weights_and_quantizers(self, layer):
@@ -37,23 +44,17 @@ class Solver():
             return tfmot.quantization.keras.quantize_annotate_layer(layer, quantize_config=NoOpQuantizeConfig())
         return layer
 
-    def __init__(self, args, train_data, val_data, writer):
+    def __init__(self, args, logger, train_data, val_data, val_data_raw, writer):
         super(Solver, self).__init__()
         self.opt = args['solver']
         self.qat = self.opt['qat']
         self.resume = self.opt['resume']
-        self.lg = logging.getLogger(args['name'])
+        self.lg = logger
         self.state = {'current_epoch': -1, 'best_epoch': -1, 'best_psnr': -1}
-        test_lr = self.opt['lr']
-
-        print(f"self.solver: {args['solver']}")
-        print(f"self.resume: {self.resume}")
-        print(f"self.resume: {args['solver']['resume']}")
-        print(f"self.loss: {args['solver']['loss']}")
-        print(f"self.lr: {args['solver']['lr']}")
+        
         if self.resume:
             self.lg.info('Load from checkpoint: [{}]'.format(self.opt['resume_path']))
-            self.model = tf.keras.models.load_model(self.opt['resume_path'], custom_objects={'tf': tf})
+            self.model = tf.keras.models.load_model(self.opt['resume_path'], custom_objects={'tf': tf, 'PSNR': PSNR})
             with open(args['paths']['state'], 'rb') as f:
                 self.state = pickle.load(f)
                 self.lg.info('Load checkpoint state successfully!')
@@ -61,7 +62,7 @@ class Solver():
         elif self.qat: #Quantization-Aware Training
             # load pretrain model
             self.lg.info('Loading pretrained model ...')
-            p_model = tf.keras.models.load_model(self.opt['qat_path'], custom_objects={'tf': tf})
+            p_model = tf.keras.models.load_model(self.opt['qat_path'], custom_objects={'tf': tf, 'PSNR': PSNR})
             self.lg.info('Start copying weights and annotate Lambda layer...')
             annotate_model = tf.keras.models.clone_model(
                 p_model,
@@ -80,17 +81,19 @@ class Solver():
 
         self.train_data = train_data
         self.val_data = val_data
+        self.val_data_raw = val_data_raw
         self.writer = writer
     
-        self.optimizer = tf.keras.optimizers.Adam(lr=self.opt['lr'])
+        self.optimizer = tf.keras.optimizers.Adam(learning_rate=self.opt['lr'])
         lr_scheduler = LearningRateScheduler(self.scheduler)
-        epoch_end_call = Epoch_End_Callback(self.val_data, self.train_data, self.lg, self.writer, args['paths'], self.opt['val_step'], state=self.state)
+        epoch_end_call = Epoch_End_Callback(self.val_data, self.val_data_raw, self.train_data, self.lg, self.writer, args['paths'], self.opt['val_step'], state=self.state)
         self.callback = [lr_scheduler, epoch_end_call]        
 
     def train(self):
         if self.resume == False:
-            self.model.compile(optimizer=self.optimizer, loss=self.opt['loss'])
-        history = self.model.fit(self.train_data, epochs=self.opt['epochs'], workers=self.opt['workers'], callbacks=self.callback, initial_epoch=self.state['current_epoch']+1)
+            self.model.compile(optimizer=self.optimizer, loss=self.opt['loss'], metrics=[PSNR])
+        # history = self.model.fit(self.train_data, epochs=self.opt['epochs'], workers=self.opt['workers'], callbacks=self.callback, initial_epoch=self.state['current_epoch']+1, use_multiprocessing=True)
+        history = self.model.fit(self.train_data, epochs=self.opt['epochs'], initial_epoch=self.state['current_epoch']+1, validation_data=self.val_data, use_multiprocessing=True, workers=self.opt['workers'], callbacks=self.callback)
 
     def scheduler(self, epoch):        
         if epoch in self.opt['lr_steps']:
@@ -100,10 +103,11 @@ class Solver():
 
 
 class Epoch_End_Callback(Callback):
-    def __init__(self, val_data, train_data, lg, writer, paths, val_step, state):
+    def __init__(self, val_data, val_data_raw, train_data, lg, writer, paths, val_step, state):
         super(Epoch_End_Callback, self).__init__()
         self.val_step = val_step
         self.val_data = val_data
+        self.val_data_raw = val_data_raw
         self.train_data = train_data
         self.lg = lg
         self.writer = writer
@@ -115,20 +119,22 @@ class Epoch_End_Callback(Callback):
         self.best_psnr = state['best_psnr']
 
     def on_epoch_end(self, epoch, logs):
-        
-        self.train_data.shuffle()
+        # self.train_data.shuffle()
         if epoch % self.val_step != 0:
             return
 
         # validate
         psnr = 0.0
-        pbar = ProgressBar(len(self.val_data))
-        for i, (lr, hr) in enumerate(self.val_data):
+        pbar = ProgressBar(len(self.val_data_raw))
+        for i, (lr, hr) in enumerate(self.val_data_raw):
             sr = self.model(lr)
             sr_numpy = K.eval(sr)
-            psnr += self.calc_psnr((sr_numpy).squeeze(), (hr).squeeze())
+            hr_numpy = hr.numpy().astype(np.float32)
+            # psnr += self.calc_psnr((sr_numpy).squeeze(), (hr).squeeze())
+            psnr += PSNR(sr, hr_numpy).numpy()
             pbar.update('')
-        psnr = round(psnr / len(self.val_data), 4)
+        print('\nvalidation completed')
+        psnr = round(psnr / len(self.val_data_raw), 4)
         loss = round(logs['loss'], 4)
 
         # save best status
