@@ -20,7 +20,7 @@ def base7(scale=2, in_channels=3, num_fea=28, m=4, out_channels=3):
 
     # Pixel-Shuffle
     x = SeparableConv2D(out_channels*(scale**2), 3, padding='same', activation='relu', depthwise_initializer=he_normal(), pointwise_initializer=he_normal(), bias_initializer='zeros')(x)
-    x = SeparableConv2D(out_channels*(scale**2), 3, padding='same', activation='relu', depthwise_initializer=he_normal(), pointwise_initializer=he_normal(), bias_initializer='zeros')(x)
+    x = SeparableConv2D(out_channels*(scale**2), 3, padding='same', depthwise_initializer=he_normal(), pointwise_initializer=he_normal(), bias_initializer='zeros')(x)
     x = Add()([upsampled_inp, x])
     
     depth_to_space = Lambda(lambda x: tf.nn.depth_to_space(x, scale))
