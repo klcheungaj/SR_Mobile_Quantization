@@ -1,0 +1,658 @@
+
+<html>
+<head>
+<style>
+body {font-family: sans-serif; background-color: #fa0;}
+table {background-color: #eca;}
+th {background-color: black; color: white;}
+h1 {
+  background-color: ffaa00;
+  padding:5px;
+  color: black;
+}
+
+svg {
+  margin: 10px;
+  border: 2px;
+  border-style: solid;
+  border-color: black;
+  background: white;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #fec;
+  padding:5px;
+  margin:5px;
+}
+
+.tooltip {color: blue;}
+.tooltip .tooltipcontent  {
+    visibility: hidden;
+    color: black;
+    background-color: yellow;
+    padding: 5px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+}
+.tooltip:hover .tooltipcontent {
+    visibility: visible;
+}
+
+.edges line {
+  stroke: #333;
+}
+
+text {
+  font-weight: bold;
+}
+
+.nodes text {
+  color: black;
+  pointer-events: none;
+  font-family: sans-serif;
+  font-size: 11px;
+}
+</style>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+</head>
+<body>
+<h1>TensorFlow Lite Model</h2><table>
+<tr><th>filename</th><td>../TFMODEL/base7_D4C28_bs16ps64_lr1e-3.tflite</td></tr>
+<tr><th>version</th><td>3</td></tr>
+<tr><th>description</th><td>[77, 76, 73, 82, 32, 67, 111, 110, 118, 101, 114, 116, 101, 100, 46]</td></tr>
+</table>
+<div class='subgraph'><h2>Subgraph 0</h2>
+<h3>Inputs/Outputs</h3>
+<table><tr>
+<tr>
+<th>inputs</th><th>outputs</th></tr>
+<tr>
+<td><span class='tooltip'><span class='tooltipcontent'>0 input_1 UINT8 [1, 1, 1, 3][1, -1, -1, 3]<br></span>[0]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>29 Identity UINT8 [1, 1, 1, 3][1, -1, -1, 3]<br></span>[29]</span></td>
+</tr>
+</table>
+<h3>Tensors</h3>
+<table><tr>
+<tr>
+<th>index</th><th>name</th><th>type</th><th>shape</th><th>shape_signature</th><th>buffer</th><th>quantization</th></tr>
+<tr>
+<td>0</td><td>input_1</td>
+<td>UINT8</td>
+<td>[1, 1, 1, 3]</td>
+<td>[1, -1, -1, 3]</td>
+<td>1</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [1.0], 'zero_point': [0]}</td>
+</tr>
+<tr>
+<td>1</td><td>tfl.quantize</td>
+<td>INT8</td>
+<td>[1, 1, 1, 3]</td>
+<td>[1, -1, -1, 3]</td>
+<td>2</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [1.0], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>2</td><td>model/conv2d/Conv2D;StatefulPartitionedCall/model/conv2d/Conv2D</td>
+<td>INT8</td>
+<td>[28, 3, 3, 3]</td>
+<td>None</td>
+<td>3</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.0048448448069393635, 0.001026639947667718, 0.0028005947824567556, 0.002330281538888812, 0.0012052888050675392, 0.007454856298863888, 0.0028983899392187595, 0.0011360937496647239, 0.03693591430783272, 0.026245703920722008, 0.0044898646883666515, 0.0073502506129443645, 0.07367058098316193, 0.0024432530626654625, 0.0030387528240680695, 0.008194545283913612, 0.0026482385583221912, 0.0034618950448930264, 0.0031061756890267134, 0.0011128431651741266, 0.0025073320139199495, 0.02509099803864956, 0.006685587577521801, 0.0017579759005457163, 0.0017377008916810155, 0.009649976156651974, 0.0019391021924093366, 0.0026020873337984085], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>3</td><td>unknown_0</td>
+<td>INT32</td>
+<td>[28]</td>
+<td>None</td>
+<td>4</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.0048448448069393635, 0.001026639947667718, 0.0028005947824567556, 0.002330281538888812, 0.0012052888050675392, 0.007454856298863888, 0.0028983899392187595, 0.0011360937496647239, 0.03693591430783272, 0.026245703920722008, 0.0044898646883666515, 0.0073502506129443645, 0.07367058098316193, 0.0024432530626654625, 0.0030387528240680695, 0.008194545283913612, 0.0026482385583221912, 0.0034618950448930264, 0.0031061756890267134, 0.0011128431651741266, 0.0025073320139199495, 0.02509099803864956, 0.006685587577521801, 0.0017579759005457163, 0.0017377008916810155, 0.009649976156651974, 0.0019391021924093366, 0.0026020873337984085], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>4</td><td>model/conv2d_1/Conv2D;StatefulPartitionedCall/model/conv2d_1/Conv2D</td>
+<td>INT8</td>
+<td>[28, 3, 3, 28]</td>
+<td>None</td>
+<td>5</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.015911946073174477, 0.009216859005391598, 0.0056332978419959545, 0.005974237807095051, 0.008339635096490383, 0.011632934212684631, 0.006462766323238611, 0.009412170387804508, 0.009063074365258217, 0.010501570999622345, 0.019422395154833794, 0.016500210389494896, 0.004905456677079201, 0.0067515261471271515, 0.008015219122171402, 0.008158263750374317, 0.008768338710069656, 0.006402472034096718, 0.025239123031497, 0.008556324057281017, 0.013616995885968208, 0.019177325069904327, 0.008244004100561142, 0.011893225833773613, 0.012944741174578667, 0.009316997602581978, 0.014167817309498787, 0.009677529335021973], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>5</td><td>unknown_2</td>
+<td>INT32</td>
+<td>[28]</td>
+<td>None</td>
+<td>6</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.011276853270828724, 0.00653202086687088, 0.003992338199168444, 0.004233963787555695, 0.005910329055041075, 0.008244302123785019, 0.0045801857486367226, 0.006670438684523106, 0.006423033308237791, 0.0074425009079277515, 0.013764721341431141, 0.011693757958710194, 0.0034765147138386965, 0.004784830845892429, 0.005680414382368326, 0.00578179070726037, 0.00621415302157402, 0.004537454806268215, 0.01788705587387085, 0.006063897628337145, 0.009650413878262043, 0.0135910389944911, 0.0058425553143024445, 0.00842877198010683, 0.0091739846393466, 0.006602989509701729, 0.010040782392024994, 0.006858499720692635], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>6</td><td>model/conv2d_2/Conv2D;StatefulPartitionedCall/model/conv2d_2/Conv2D</td>
+<td>INT8</td>
+<td>[28, 3, 3, 28]</td>
+<td>None</td>
+<td>7</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.016890620812773705, 0.02765032835304737, 0.00553168635815382, 0.011947275139391422, 0.009058518335223198, 0.022290965542197227, 0.014636005274951458, 0.02843589149415493, 0.010486848652362823, 0.014407342299818993, 0.009018807671964169, 0.010224333964288235, 0.006689855363219976, 0.008597759529948235, 0.00802514050155878, 0.01304411981254816, 0.013569159433245659, 0.009025607258081436, 0.011267139576375484, 0.01008816808462143, 0.012776510789990425, 0.015332086943089962, 0.013183742761611938, 0.014838782139122486, 0.01612183451652527, 0.01379548292607069, 0.005235301796346903, 0.019066793844103813], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>7</td><td>unknown_4</td>
+<td>INT32</td>
+<td>[28]</td>
+<td>None</td>
+<td>8</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.023509621620178223, 0.038485780358314514, 0.007699412293732166, 0.016629105433821678, 0.012608318589627743, 0.031026221811771393, 0.02037147991359234, 0.03957918658852577, 0.01459637563675642, 0.020053209736943245, 0.012553046457469463, 0.01423098798841238, 0.009311437606811523, 0.011967000551521778, 0.011169986799359322, 0.0181557759642601, 0.018886564299464226, 0.012562510557472706, 0.015682442113757133, 0.014041461981832981, 0.01778329722583294, 0.02134033851325512, 0.018350113183259964, 0.02065371908247471, 0.022439567372202873, 0.019201578572392464, 0.0072868820279836655, 0.026538580656051636], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>8</td><td>model/conv2d_3/Conv2D;StatefulPartitionedCall/model/conv2d_3/Conv2D</td>
+<td>INT8</td>
+<td>[28, 3, 3, 28]</td>
+<td>None</td>
+<td>9</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.0035294657573103905, 0.00668651657178998, 0.006740888115018606, 0.0047503807581961155, 0.010332133620977402, 0.006856716237962246, 0.0066849240101873875, 0.003930889070034027, 0.006318913772702217, 0.005988738499581814, 0.017897699028253555, 0.014021367765963078, 0.003977433778345585, 0.0038194251246750355, 0.00855287816375494, 0.007948257960379124, 0.006240458693355322, 0.00492166168987751, 0.008416574448347092, 0.009926536120474339, 0.014599103480577469, 0.010490192100405693, 0.005655722692608833, 0.004913946148008108, 0.005235979799181223, 0.005724058952182531, 0.005148783326148987, 0.016048934310674667], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>9</td><td>unknown_6</td>
+<td>INT32</td>
+<td>[28]</td>
+<td>None</td>
+<td>10</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.005301790311932564, 0.010044156573712826, 0.01012583076953888, 0.007135788910090923, 0.015520423650741577, 0.010299822315573692, 0.010041764937341213, 0.005904788617044687, 0.009491962380707264, 0.008995989337563515, 0.02688504382967949, 0.021062210202217102, 0.005974705796688795, 0.005737352650612593, 0.012847713194787502, 0.011939482763409615, 0.009374110959470272, 0.007393078412860632, 0.012642964720726013, 0.014911155216395855, 0.02193005569279194, 0.01575785130262375, 0.008495748974382877, 0.00738148856908083, 0.007865231484174728, 0.00859840027987957, 0.007734249345958233, 0.0241079218685627], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>10</td><td>model/conv2d_4/Conv2D;StatefulPartitionedCall/model/conv2d_4/Conv2D</td>
+<td>INT8</td>
+<td>[28, 3, 3, 28]</td>
+<td>None</td>
+<td>11</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.008523564785718918, 0.01126862969249487, 0.005848890636116266, 0.006596491206437349, 0.003749836701899767, 0.006729427725076675, 0.008114184252917767, 0.007865342311561108, 0.013846066780388355, 0.010820748284459114, 0.006555693689733744, 0.004038635175675154, 0.0053688534535467625, 0.03378022834658623, 0.009929357096552849, 0.008305089548230171, 0.009952339343726635, 0.01154117751866579, 0.005314928013831377, 0.005320576019585133, 0.006502734497189522, 0.0065497891046106815, 0.011638006195425987, 0.01646276004612446, 0.004229254089295864, 0.010671127587556839, 0.007730391807854176, 0.004966674838215113], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>11</td><td>unknown_8</td>
+<td>INT32</td>
+<td>[28]</td>
+<td>None</td>
+<td>12</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.020558608695864677, 0.02717963047325611, 0.01410736609250307, 0.0159105584025383, 0.009044504724442959, 0.016231197863817215, 0.01957119256258011, 0.018970992416143417, 0.033396340906620026, 0.026099352166056633, 0.015812156721949577, 0.009741079062223434, 0.012949529103934765, 0.08147700130939484, 0.023949341848492622, 0.020031651481986046, 0.024004774168133736, 0.027837008237838745, 0.012819462455809116, 0.012833085842430592, 0.015684420242905617, 0.015797914937138557, 0.02807055599987507, 0.0397077314555645, 0.010200846940279007, 0.025738472118973732, 0.018645497038960457, 0.011979485861957073], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>12</td><td>model/conv2d_5/Conv2D;StatefulPartitionedCall/model/conv2d_5/Conv2D</td>
+<td>INT8</td>
+<td>[27, 3, 3, 28]</td>
+<td>None</td>
+<td>13</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.002177504124119878, 0.004080406855791807, 0.004484186414629221, 0.0048378463834524155, 0.0019060318591073155, 0.0046562980860471725, 0.006636411417275667, 0.0025687958113849163, 0.003702071961015463, 0.004976724740117788, 0.0014362670481204987, 0.0028490074910223484, 0.0016843785997480154, 0.002884014043956995, 0.008380556479096413, 0.0034814768005162477, 0.007129629608243704, 0.006165789440274239, 0.005530217196792364, 0.00654604472219944, 0.003519980004057288, 0.002423681318759918, 0.002273818012326956, 0.004369907546788454, 0.004330222494900227, 0.0035295572597533464, 0.0052060228772461414], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>13</td><td>unknown_10</td>
+<td>INT32</td>
+<td>[27]</td>
+<td>None</td>
+<td>14</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.004737711511552334, 0.008877958171069622, 0.009756482206285, 0.0105259595438838, 0.004147054627537727, 0.010130954906344414, 0.014439192600548267, 0.005589065607637167, 0.008054794743657112, 0.010828124359250069, 0.0031249625608325005, 0.00619873683899641, 0.00366479204967618, 0.006274902727454901, 0.018234021961688995, 0.007574833929538727, 0.015512313693761826, 0.01341523602604866, 0.012032386846840382, 0.014242577366530895, 0.007658607326447964, 0.005273332353681326, 0.004947266541421413, 0.009507839567959309, 0.009421494789421558, 0.007679445203393698, 0.011327020823955536], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>14</td><td>model/conv2d_6/Conv2D;StatefulPartitionedCall/model/conv2d_6/Conv2D</td>
+<td>INT8</td>
+<td>[27, 3, 3, 27]</td>
+<td>None</td>
+<td>15</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.0026784869842231274, 0.001987215131521225, 0.002270947676151991, 0.0023393200244754553, 0.0020937910303473473, 0.0019799410365521908, 0.0026776681188493967, 0.0026742066256701946, 0.0024234713055193424, 0.002300987485796213, 0.002234261715784669, 0.0020609605126082897, 0.0012551763793453574, 0.0013775147963315248, 0.001263557467609644, 0.0018105775816366076, 0.0019099779892712831, 0.0016244371654465795, 0.002498485380783677, 0.002037020865827799, 0.002258616965264082, 0.0028580997604876757, 0.0019612647593021393, 0.002141547156497836, 0.0027440902777016163, 0.002150892512872815, 0.002010656287893653], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>15</td><td>model/conv2d_6/BiasAdd;StatefulPartitionedCall/model/conv2d_6/BiasAdd;model/conv2d_6/Conv2D;StatefulPartitionedCall/model/conv2d_6/Conv2D;unknown_12</td>
+<td>INT32</td>
+<td>[27]</td>
+<td>None</td>
+<td>16</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.007330942898988724, 0.005438951309770346, 0.006215519271790981, 0.006402652710676193, 0.005730646662414074, 0.005419042427092791, 0.007328701671212912, 0.007319227792322636, 0.006632972043007612, 0.00629773736000061, 0.00611511105671525, 0.005640790332108736, 0.003435382153838873, 0.0037702189292758703, 0.003458320861682296, 0.004955499432981014, 0.005227555520832539, 0.004446038510650396, 0.006838283501565456, 0.005575268063694239, 0.006181770469993353, 0.007822537794709206, 0.0053679258562624454, 0.005861353594809771, 0.007510497234761715, 0.005886931903660297, 0.005503109190613031], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>16</td><td>model/lambda_2/clip_by_value/Minimum/y;StatefulPartitionedCall/model/lambda_2/clip_by_value/Minimum/y</td>
+<td>INT8</td>
+<td>[]</td>
+<td>None</td>
+<td>17</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [1.2506462335586548], 'zero_point': [-77]}</td>
+</tr>
+<tr>
+<td>17</td><td>model/lambda/concat;StatefulPartitionedCall/model/lambda/concat</td>
+<td>INT8</td>
+<td>[1, 1, 1, 27]</td>
+<td>[1, -1, -1, 27]</td>
+<td>18</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [1.0], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>18</td><td>model/conv2d/Relu;StatefulPartitionedCall/model/conv2d/Relu;model/conv2d/BiasAdd;StatefulPartitionedCall/model/conv2d/BiasAdd;model/conv2d_4/Conv2D;StatefulPartitionedCall/model/conv2d_4/Conv2D;model/conv2d/Conv2D;StatefulPartitionedCall/model/conv2d/Conv2D;unknown_0</td>
+<td>INT8</td>
+<td>[1, 1, 1, 28]</td>
+<td>[1, -1, -1, 28]</td>
+<td>19</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.7087035775184631], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>19</td><td>model/conv2d_1/Relu;StatefulPartitionedCall/model/conv2d_1/Relu;model/conv2d_1/BiasAdd;StatefulPartitionedCall/model/conv2d_1/BiasAdd;model/conv2d_4/Conv2D;StatefulPartitionedCall/model/conv2d_4/Conv2D;model/conv2d_1/Conv2D;StatefulPartitionedCall/model/conv2d_1/Conv2D;unknown_2</td>
+<td>INT8</td>
+<td>[1, 1, 1, 28]</td>
+<td>[1, -1, -1, 28]</td>
+<td>20</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [1.3918743133544922], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>20</td><td>model/conv2d_2/Relu;StatefulPartitionedCall/model/conv2d_2/Relu;model/conv2d_2/BiasAdd;StatefulPartitionedCall/model/conv2d_2/BiasAdd;model/conv2d_4/Conv2D;StatefulPartitionedCall/model/conv2d_4/Conv2D;model/conv2d_2/Conv2D;StatefulPartitionedCall/model/conv2d_2/Conv2D;unknown_4</td>
+<td>INT8</td>
+<td>[1, 1, 1, 28]</td>
+<td>[1, -1, -1, 28]</td>
+<td>21</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [1.5021508932113647], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>21</td><td>model/conv2d_3/Relu;StatefulPartitionedCall/model/conv2d_3/Relu;model/conv2d_3/BiasAdd;StatefulPartitionedCall/model/conv2d_3/BiasAdd;model/conv2d_4/Conv2D;StatefulPartitionedCall/model/conv2d_4/Conv2D;model/conv2d_3/Conv2D;StatefulPartitionedCall/model/conv2d_3/Conv2D;unknown_6</td>
+<td>INT8</td>
+<td>[1, 1, 1, 28]</td>
+<td>[1, -1, -1, 28]</td>
+<td>22</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [2.411972999572754], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>22</td><td>model/conv2d_4/Relu;StatefulPartitionedCall/model/conv2d_4/Relu;model/conv2d_4/BiasAdd;StatefulPartitionedCall/model/conv2d_4/BiasAdd;model/conv2d_4/Conv2D;StatefulPartitionedCall/model/conv2d_4/Conv2D;unknown_8</td>
+<td>INT8</td>
+<td>[1, 1, 1, 28]</td>
+<td>[1, -1, -1, 28]</td>
+<td>23</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [2.175753116607666], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>23</td><td>model/conv2d_5/Relu;StatefulPartitionedCall/model/conv2d_5/Relu;model/conv2d_5/BiasAdd;StatefulPartitionedCall/model/conv2d_5/BiasAdd;model/conv2d_6/Conv2D;StatefulPartitionedCall/model/conv2d_6/Conv2D;model/conv2d_5/Conv2D;StatefulPartitionedCall/model/conv2d_5/Conv2D;unknown_10</td>
+<td>INT8</td>
+<td>[1, 1, 1, 27]</td>
+<td>[1, -1, -1, 27]</td>
+<td>24</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [2.736971616744995], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>24</td><td>model/conv2d_6/BiasAdd;StatefulPartitionedCall/model/conv2d_6/BiasAdd;model/conv2d_6/Conv2D;StatefulPartitionedCall/model/conv2d_6/Conv2D;unknown_121</td>
+<td>INT8</td>
+<td>[1, 1, 1, 27]</td>
+<td>[1, -1, -1, 27]</td>
+<td>25</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [1.6545989513397217], 'zero_point': [-6]}</td>
+</tr>
+<tr>
+<td>25</td><td>model/add/add;StatefulPartitionedCall/model/add/add</td>
+<td>INT8</td>
+<td>[1, 1, 1, 27]</td>
+<td>[1, -1, -1, 27]</td>
+<td>26</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [1.2506462335586548], 'zero_point': [-77]}</td>
+</tr>
+<tr>
+<td>26</td><td>model/lambda_1/DepthToSpace;StatefulPartitionedCall/model/lambda_1/DepthToSpace</td>
+<td>INT8</td>
+<td>[1, 1, 1, 3]</td>
+<td>[1, -1, -1, 3]</td>
+<td>27</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [1.2506462335586548], 'zero_point': [-77]}</td>
+</tr>
+<tr>
+<td>27</td><td>model/lambda_2/clip_by_value/Minimum;StatefulPartitionedCall/model/lambda_2/clip_by_value/Minimum</td>
+<td>INT8</td>
+<td>[1, 1, 1, 3]</td>
+<td>[1, -1, -1, 3]</td>
+<td>28</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [1.2506462335586548], 'zero_point': [-77]}</td>
+</tr>
+<tr>
+<td>28</td><td>Identity1</td>
+<td>INT8</td>
+<td>[1, 1, 1, 3]</td>
+<td>[1, -1, -1, 3]</td>
+<td>29</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [1.0], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>29</td><td>Identity</td>
+<td>UINT8</td>
+<td>[1, 1, 1, 3]</td>
+<td>[1, -1, -1, 3]</td>
+<td>30</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [1.0], 'zero_point': [0]}</td>
+</tr>
+</table>
+<h3>Ops</h3>
+<table><tr>
+<tr>
+<th>index</th><th>inputs</th><th>outputs</th><th>builtin_options</th><th>opcode_index</th></tr>
+<tr>
+<td>0</td><td><span class='tooltip'><span class='tooltipcontent'>0 input_1 UINT8 [1, 1, 1, 3][1, -1, -1, 3]<br></span>[0]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>1 tfl.quantize INT8 [1, 1, 1, 3][1, -1, -1, 3]<br></span>[1]</span></td>
+<td>None</td>
+<td>QUANTIZE (0)</td>
+</tr>
+<tr>
+<td>1</td><td><span class='tooltip'><span class='tooltipcontent'>1 tfl.quantize INT8 [1, 1, 1, 3][1, -1, -1, 3]<br>1 tfl.quantize INT8 [1, 1, 1, 3][1, -1, -1, 3]<br>1 tfl.quantize INT8 [1, 1, 1, 3][1, -1, -1, 3]<br>1 tfl.quantize INT8 [1, 1, 1, 3][1, -1, -1, 3]<br>1 tfl.quantize INT8 [1, 1, 1, 3][1, -1, -1, 3]<br>1 tfl.quantize INT8 [1, 1, 1, 3][1, -1, -1, 3]<br>1 tfl.quantize INT8 [1, 1, 1, 3][1, -1, -1, 3]<br>1 tfl.quantize INT8 [1, 1, 1, 3][1, -1, -1, 3]<br>1 tfl.quantize INT8 [1, 1, 1, 3][1, -1, -1, 3]<br></span>[1, 1, 1, 1, 1, 1, 1, 1, 1]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>17 model/lambda/concat;StatefulPartitionedCall/model/lambda/concat INT8 [1, 1, 1, 27][1, -1, -1, 27]<br></span>[17]</span></td>
+<td>{'axis': 3, 'fused_activation_function': 0}</td>
+<td>CONCATENATION (1)</td>
+</tr>
+<tr>
+<td>2</td><td><span class='tooltip'><span class='tooltipcontent'>1 tfl.quantize INT8 [1, 1, 1, 3][1, -1, -1, 3]<br>2 model/conv2d/Conv2D;StatefulPartitionedCall/model/conv2d/Conv2D INT8 [28, 3, 3, 3]None<br>3 unknown_0 INT32 [28]None<br></span>[1, 2, 3]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>18 model/conv2d/Relu;StatefulPartitionedCall/model/conv2d/Relu;model/conv2d/BiasAdd;StatefulPartitionedCall/model/conv2d/BiasAdd;model/conv2d_4/Conv2D;StatefulPartitionedCall/model/conv2d_4/Conv2D;model/conv2d/Conv2D;StatefulPartitionedCall/model/conv2d/Conv2D;unknown_0 INT8 [1, 1, 1, 28][1, -1, -1, 28]<br></span>[18]</span></td>
+<td>{'dilation_h_factor': 1, 'dilation_w_factor': 1, 'fused_activation_function': 1, 'padding': 0, 'stride_h': 1, 'stride_w': 1}</td>
+<td>CONV_2D (2)</td>
+</tr>
+<tr>
+<td>3</td><td><span class='tooltip'><span class='tooltipcontent'>18 model/conv2d/Relu;StatefulPartitionedCall/model/conv2d/Relu;model/conv2d/BiasAdd;StatefulPartitionedCall/model/conv2d/BiasAdd;model/conv2d_4/Conv2D;StatefulPartitionedCall/model/conv2d_4/Conv2D;model/conv2d/Conv2D;StatefulPartitionedCall/model/conv2d/Conv2D;unknown_0 INT8 [1, 1, 1, 28][1, -1, -1, 28]<br>4 model/conv2d_1/Conv2D;StatefulPartitionedCall/model/conv2d_1/Conv2D INT8 [28, 3, 3, 28]None<br>5 unknown_2 INT32 [28]None<br></span>[18, 4, 5]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>19 model/conv2d_1/Relu;StatefulPartitionedCall/model/conv2d_1/Relu;model/conv2d_1/BiasAdd;StatefulPartitionedCall/model/conv2d_1/BiasAdd;model/conv2d_4/Conv2D;StatefulPartitionedCall/model/conv2d_4/Conv2D;model/conv2d_1/Conv2D;StatefulPartitionedCall/model/conv2d_1/Conv2D;unknown_2 INT8 [1, 1, 1, 28][1, -1, -1, 28]<br></span>[19]</span></td>
+<td>{'dilation_h_factor': 1, 'dilation_w_factor': 1, 'fused_activation_function': 1, 'padding': 0, 'stride_h': 1, 'stride_w': 1}</td>
+<td>CONV_2D (2)</td>
+</tr>
+<tr>
+<td>4</td><td><span class='tooltip'><span class='tooltipcontent'>19 model/conv2d_1/Relu;StatefulPartitionedCall/model/conv2d_1/Relu;model/conv2d_1/BiasAdd;StatefulPartitionedCall/model/conv2d_1/BiasAdd;model/conv2d_4/Conv2D;StatefulPartitionedCall/model/conv2d_4/Conv2D;model/conv2d_1/Conv2D;StatefulPartitionedCall/model/conv2d_1/Conv2D;unknown_2 INT8 [1, 1, 1, 28][1, -1, -1, 28]<br>6 model/conv2d_2/Conv2D;StatefulPartitionedCall/model/conv2d_2/Conv2D INT8 [28, 3, 3, 28]None<br>7 unknown_4 INT32 [28]None<br></span>[19, 6, 7]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>20 model/conv2d_2/Relu;StatefulPartitionedCall/model/conv2d_2/Relu;model/conv2d_2/BiasAdd;StatefulPartitionedCall/model/conv2d_2/BiasAdd;model/conv2d_4/Conv2D;StatefulPartitionedCall/model/conv2d_4/Conv2D;model/conv2d_2/Conv2D;StatefulPartitionedCall/model/conv2d_2/Conv2D;unknown_4 INT8 [1, 1, 1, 28][1, -1, -1, 28]<br></span>[20]</span></td>
+<td>{'dilation_h_factor': 1, 'dilation_w_factor': 1, 'fused_activation_function': 1, 'padding': 0, 'stride_h': 1, 'stride_w': 1}</td>
+<td>CONV_2D (2)</td>
+</tr>
+<tr>
+<td>5</td><td><span class='tooltip'><span class='tooltipcontent'>20 model/conv2d_2/Relu;StatefulPartitionedCall/model/conv2d_2/Relu;model/conv2d_2/BiasAdd;StatefulPartitionedCall/model/conv2d_2/BiasAdd;model/conv2d_4/Conv2D;StatefulPartitionedCall/model/conv2d_4/Conv2D;model/conv2d_2/Conv2D;StatefulPartitionedCall/model/conv2d_2/Conv2D;unknown_4 INT8 [1, 1, 1, 28][1, -1, -1, 28]<br>8 model/conv2d_3/Conv2D;StatefulPartitionedCall/model/conv2d_3/Conv2D INT8 [28, 3, 3, 28]None<br>9 unknown_6 INT32 [28]None<br></span>[20, 8, 9]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>21 model/conv2d_3/Relu;StatefulPartitionedCall/model/conv2d_3/Relu;model/conv2d_3/BiasAdd;StatefulPartitionedCall/model/conv2d_3/BiasAdd;model/conv2d_4/Conv2D;StatefulPartitionedCall/model/conv2d_4/Conv2D;model/conv2d_3/Conv2D;StatefulPartitionedCall/model/conv2d_3/Conv2D;unknown_6 INT8 [1, 1, 1, 28][1, -1, -1, 28]<br></span>[21]</span></td>
+<td>{'dilation_h_factor': 1, 'dilation_w_factor': 1, 'fused_activation_function': 1, 'padding': 0, 'stride_h': 1, 'stride_w': 1}</td>
+<td>CONV_2D (2)</td>
+</tr>
+<tr>
+<td>6</td><td><span class='tooltip'><span class='tooltipcontent'>21 model/conv2d_3/Relu;StatefulPartitionedCall/model/conv2d_3/Relu;model/conv2d_3/BiasAdd;StatefulPartitionedCall/model/conv2d_3/BiasAdd;model/conv2d_4/Conv2D;StatefulPartitionedCall/model/conv2d_4/Conv2D;model/conv2d_3/Conv2D;StatefulPartitionedCall/model/conv2d_3/Conv2D;unknown_6 INT8 [1, 1, 1, 28][1, -1, -1, 28]<br>10 model/conv2d_4/Conv2D;StatefulPartitionedCall/model/conv2d_4/Conv2D INT8 [28, 3, 3, 28]None<br>11 unknown_8 INT32 [28]None<br></span>[21, 10, 11]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>22 model/conv2d_4/Relu;StatefulPartitionedCall/model/conv2d_4/Relu;model/conv2d_4/BiasAdd;StatefulPartitionedCall/model/conv2d_4/BiasAdd;model/conv2d_4/Conv2D;StatefulPartitionedCall/model/conv2d_4/Conv2D;unknown_8 INT8 [1, 1, 1, 28][1, -1, -1, 28]<br></span>[22]</span></td>
+<td>{'dilation_h_factor': 1, 'dilation_w_factor': 1, 'fused_activation_function': 1, 'padding': 0, 'stride_h': 1, 'stride_w': 1}</td>
+<td>CONV_2D (2)</td>
+</tr>
+<tr>
+<td>7</td><td><span class='tooltip'><span class='tooltipcontent'>22 model/conv2d_4/Relu;StatefulPartitionedCall/model/conv2d_4/Relu;model/conv2d_4/BiasAdd;StatefulPartitionedCall/model/conv2d_4/BiasAdd;model/conv2d_4/Conv2D;StatefulPartitionedCall/model/conv2d_4/Conv2D;unknown_8 INT8 [1, 1, 1, 28][1, -1, -1, 28]<br>12 model/conv2d_5/Conv2D;StatefulPartitionedCall/model/conv2d_5/Conv2D INT8 [27, 3, 3, 28]None<br>13 unknown_10 INT32 [27]None<br></span>[22, 12, 13]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>23 model/conv2d_5/Relu;StatefulPartitionedCall/model/conv2d_5/Relu;model/conv2d_5/BiasAdd;StatefulPartitionedCall/model/conv2d_5/BiasAdd;model/conv2d_6/Conv2D;StatefulPartitionedCall/model/conv2d_6/Conv2D;model/conv2d_5/Conv2D;StatefulPartitionedCall/model/conv2d_5/Conv2D;unknown_10 INT8 [1, 1, 1, 27][1, -1, -1, 27]<br></span>[23]</span></td>
+<td>{'dilation_h_factor': 1, 'dilation_w_factor': 1, 'fused_activation_function': 1, 'padding': 0, 'stride_h': 1, 'stride_w': 1}</td>
+<td>CONV_2D (2)</td>
+</tr>
+<tr>
+<td>8</td><td><span class='tooltip'><span class='tooltipcontent'>23 model/conv2d_5/Relu;StatefulPartitionedCall/model/conv2d_5/Relu;model/conv2d_5/BiasAdd;StatefulPartitionedCall/model/conv2d_5/BiasAdd;model/conv2d_6/Conv2D;StatefulPartitionedCall/model/conv2d_6/Conv2D;model/conv2d_5/Conv2D;StatefulPartitionedCall/model/conv2d_5/Conv2D;unknown_10 INT8 [1, 1, 1, 27][1, -1, -1, 27]<br>14 model/conv2d_6/Conv2D;StatefulPartitionedCall/model/conv2d_6/Conv2D INT8 [27, 3, 3, 27]None<br>15 model/conv2d_6/BiasAdd;StatefulPartitionedCall/model/conv2d_6/BiasAdd;model/conv2d_6/Conv2D;StatefulPartitionedCall/model/conv2d_6/Conv2D;unknown_12 INT32 [27]None<br></span>[23, 14, 15]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>24 model/conv2d_6/BiasAdd;StatefulPartitionedCall/model/conv2d_6/BiasAdd;model/conv2d_6/Conv2D;StatefulPartitionedCall/model/conv2d_6/Conv2D;unknown_121 INT8 [1, 1, 1, 27][1, -1, -1, 27]<br></span>[24]</span></td>
+<td>{'dilation_h_factor': 1, 'dilation_w_factor': 1, 'fused_activation_function': 0, 'padding': 0, 'stride_h': 1, 'stride_w': 1}</td>
+<td>CONV_2D (2)</td>
+</tr>
+<tr>
+<td>9</td><td><span class='tooltip'><span class='tooltipcontent'>17 model/lambda/concat;StatefulPartitionedCall/model/lambda/concat INT8 [1, 1, 1, 27][1, -1, -1, 27]<br>24 model/conv2d_6/BiasAdd;StatefulPartitionedCall/model/conv2d_6/BiasAdd;model/conv2d_6/Conv2D;StatefulPartitionedCall/model/conv2d_6/Conv2D;unknown_121 INT8 [1, 1, 1, 27][1, -1, -1, 27]<br></span>[17, 24]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>25 model/add/add;StatefulPartitionedCall/model/add/add INT8 [1, 1, 1, 27][1, -1, -1, 27]<br></span>[25]</span></td>
+<td>{'fused_activation_function': 0, 'pot_scale_int16': True}</td>
+<td>ADD (3)</td>
+</tr>
+<tr>
+<td>10</td><td><span class='tooltip'><span class='tooltipcontent'>25 model/add/add;StatefulPartitionedCall/model/add/add INT8 [1, 1, 1, 27][1, -1, -1, 27]<br></span>[25]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>26 model/lambda_1/DepthToSpace;StatefulPartitionedCall/model/lambda_1/DepthToSpace INT8 [1, 1, 1, 3][1, -1, -1, 3]<br></span>[26]</span></td>
+<td>{'block_size': 3}</td>
+<td>DEPTH_TO_SPACE (4)</td>
+</tr>
+<tr>
+<td>11</td><td><span class='tooltip'><span class='tooltipcontent'>26 model/lambda_1/DepthToSpace;StatefulPartitionedCall/model/lambda_1/DepthToSpace INT8 [1, 1, 1, 3][1, -1, -1, 3]<br>16 model/lambda_2/clip_by_value/Minimum/y;StatefulPartitionedCall/model/lambda_2/clip_by_value/Minimum/y INT8 []None<br></span>[26, 16]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>27 model/lambda_2/clip_by_value/Minimum;StatefulPartitionedCall/model/lambda_2/clip_by_value/Minimum INT8 [1, 1, 1, 3][1, -1, -1, 3]<br></span>[27]</span></td>
+<td>None</td>
+<td>MINIMUM (5)</td>
+</tr>
+<tr>
+<td>12</td><td><span class='tooltip'><span class='tooltipcontent'>27 model/lambda_2/clip_by_value/Minimum;StatefulPartitionedCall/model/lambda_2/clip_by_value/Minimum INT8 [1, 1, 1, 3][1, -1, -1, 3]<br></span>[27]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>28 Identity1 INT8 [1, 1, 1, 3][1, -1, -1, 3]<br></span>[28]</span></td>
+<td>None</td>
+<td>RELU (6)</td>
+</tr>
+<tr>
+<td>13</td><td><span class='tooltip'><span class='tooltipcontent'>28 Identity1 INT8 [1, 1, 1, 3][1, -1, -1, 3]<br></span>[28]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>29 Identity UINT8 [1, 1, 1, 3][1, -1, -1, 3]<br></span>[29]</span></td>
+<td>None</td>
+<td>QUANTIZE (0)</td>
+</tr>
+</table>
+<svg id='subgraph0' width='1600' height='900'></svg>
+
+  <script>
+    function buildGraph() {
+      // Build graph data
+      var graph = {"nodes": [{"id": "o0", "name": "QUANTIZE (0)", "group": 2, "x": 200, "y": 200}, {"id": "o1", "name": "CONCATENATION (1)", "group": 2, "x": 200, "y": 400}, {"id": "o2", "name": "CONV_2D (2)", "group": 2, "x": 200, "y": 600}, {"id": "o3", "name": "CONV_2D (2)", "group": 2, "x": 200, "y": 800}, {"id": "o4", "name": "CONV_2D (2)", "group": 2, "x": 200, "y": 1000}, {"id": "o5", "name": "CONV_2D (2)", "group": 2, "x": 200, "y": 1200}, {"id": "o6", "name": "CONV_2D (2)", "group": 2, "x": 200, "y": 1400}, {"id": "o7", "name": "CONV_2D (2)", "group": 2, "x": 200, "y": 1600}, {"id": "o8", "name": "CONV_2D (2)", "group": 2, "x": 200, "y": 1800}, {"id": "o9", "name": "ADD (3)", "group": 2, "x": 200, "y": 2000}, {"id": "o10", "name": "DEPTH_TO_SPACE (4)", "group": 2, "x": 200, "y": 2200}, {"id": "o11", "name": "MINIMUM (5)", "group": 2, "x": 200, "y": 2400}, {"id": "o12", "name": "RELU (6)", "group": 2, "x": 200, "y": 2600}, {"id": "o13", "name": "QUANTIZE (0)", "group": 2, "x": 200, "y": 2800}, {"id": "t0", "name": "[] (0)", "group": 1, "x": 170, "y": 100.0}, {"id": "t1", "name": "[] (1)", "group": 1, "x": 170, "y": 300.0}, {"id": "t2", "name": "[] (2)", "group": 1, "x": 340, "y": 500.0}, {"id": "t3", "name": "[] (3)", "group": 1, "x": 510, "y": 500.0}, {"id": "t4", "name": "[] (4)", "group": 1, "x": 340, "y": 700.0}, {"id": "t5", "name": "[] (5)", "group": 1, "x": 510, "y": 700.0}, {"id": "t6", "name": "[] (6)", "group": 1, "x": 340, "y": 900.0}, {"id": "t7", "name": "[] (7)", "group": 1, "x": 510, "y": 900.0}, {"id": "t8", "name": "[] (8)", "group": 1, "x": 340, "y": 1100.0}, {"id": "t9", "name": "[] (9)", "group": 1, "x": 510, "y": 1100.0}, {"id": "t10", "name": "[] (10)", "group": 1, "x": 340, "y": 1300.0}, {"id": "t11", "name": "[] (11)", "group": 1, "x": 510, "y": 1300.0}, {"id": "t12", "name": "[] (12)", "group": 1, "x": 340, "y": 1500.0}, {"id": "t13", "name": "[] (13)", "group": 1, "x": 510, "y": 1500.0}, {"id": "t14", "name": "[] (14)", "group": 1, "x": 340, "y": 1700.0}, {"id": "t15", "name": "[] (15)", "group": 1, "x": 510, "y": 1700.0}, {"id": "t16", "name": "[] (16)", "group": 1, "x": 340, "y": 2300.0}, {"id": "t17", "name": "[] (17)", "group": 1, "x": 170, "y": 1900.0}, {"id": "t18", "name": "[] (18)", "group": 1, "x": 170, "y": 700.0}, {"id": "t19", "name": "[] (19)", "group": 1, "x": 170, "y": 900.0}, {"id": "t20", "name": "[] (20)", "group": 1, "x": 170, "y": 1100.0}, {"id": "t21", "name": "[] (21)", "group": 1, "x": 170, "y": 1300.0}, {"id": "t22", "name": "[] (22)", "group": 1, "x": 170, "y": 1500.0}, {"id": "t23", "name": "[] (23)", "group": 1, "x": 170, "y": 1700.0}, {"id": "t24", "name": "[] (24)", "group": 1, "x": 340, "y": 1900.0}, {"id": "t25", "name": "[] (25)", "group": 1, "x": 170, "y": 2100.0}, {"id": "t26", "name": "[] (26)", "group": 1, "x": 170, "y": 2300.0}, {"id": "t27", "name": "[] (27)", "group": 1, "x": 170, "y": 2500.0}, {"id": "t28", "name": "[] (28)", "group": 1, "x": 170, "y": 2700.0}, {"id": "t29", "name": "[] (29)", "group": 1, "x": 170, "y": 2900.0}], "edges": [{"source": "t0", "target": "o0"}, {"target": "t1", "source": "o0"}, {"source": "t1", "target": "o1"}, {"source": "t1", "target": "o1"}, {"source": "t1", "target": "o1"}, {"source": "t1", "target": "o1"}, {"source": "t1", "target": "o1"}, {"source": "t1", "target": "o1"}, {"source": "t1", "target": "o1"}, {"source": "t1", "target": "o1"}, {"source": "t1", "target": "o1"}, {"target": "t17", "source": "o1"}, {"source": "t1", "target": "o2"}, {"source": "t2", "target": "o2"}, {"source": "t3", "target": "o2"}, {"target": "t18", "source": "o2"}, {"source": "t18", "target": "o3"}, {"source": "t4", "target": "o3"}, {"source": "t5", "target": "o3"}, {"target": "t19", "source": "o3"}, {"source": "t19", "target": "o4"}, {"source": "t6", "target": "o4"}, {"source": "t7", "target": "o4"}, {"target": "t20", "source": "o4"}, {"source": "t20", "target": "o5"}, {"source": "t8", "target": "o5"}, {"source": "t9", "target": "o5"}, {"target": "t21", "source": "o5"}, {"source": "t21", "target": "o6"}, {"source": "t10", "target": "o6"}, {"source": "t11", "target": "o6"}, {"target": "t22", "source": "o6"}, {"source": "t22", "target": "o7"}, {"source": "t12", "target": "o7"}, {"source": "t13", "target": "o7"}, {"target": "t23", "source": "o7"}, {"source": "t23", "target": "o8"}, {"source": "t14", "target": "o8"}, {"source": "t15", "target": "o8"}, {"target": "t24", "source": "o8"}, {"source": "t17", "target": "o9"}, {"source": "t24", "target": "o9"}, {"target": "t25", "source": "o9"}, {"source": "t25", "target": "o10"}, {"target": "t26", "source": "o10"}, {"source": "t26", "target": "o11"}, {"source": "t16", "target": "o11"}, {"target": "t27", "source": "o11"}, {"source": "t27", "target": "o12"}, {"target": "t28", "source": "o12"}, {"source": "t28", "target": "o13"}, {"target": "t29", "source": "o13"}]};
+
+      var svg = d3.select("#subgraph0")
+      var width = svg.attr("width");
+      var height = svg.attr("height");
+      // Make the graph scrollable.
+      svg = svg.call(d3.zoom().on("zoom", function() {
+        svg.attr("transform", d3.event.transform);
+      })).append("g");
+
+
+      var color = d3.scaleOrdinal(d3.schemeDark2);
+
+      var simulation = d3.forceSimulation()
+          .force("link", d3.forceLink().id(function(d) {return d.id;}))
+          .force("charge", d3.forceManyBody())
+          .force("center", d3.forceCenter(0.5 * width, 0.5 * height));
+
+      var edge = svg.append("g").attr("class", "edges").selectAll("line")
+        .data(graph.edges).enter().append("path").attr("stroke","black").attr("fill","none")
+
+      // Make the node group
+      var node = svg.selectAll(".nodes")
+        .data(graph.nodes)
+        .enter().append("g")
+        .attr("x", function(d){return d.x})
+        .attr("y", function(d){return d.y})
+        .attr("transform", function(d) {
+          return "translate( " + d.x + ", " + d.y + ")"
+        })
+        .attr("class", "nodes")
+          .call(d3.drag()
+              .on("start", function(d) {
+                if(!d3.event.active) simulation.alphaTarget(1.0).restart();
+                d.fx = d.x;d.fy = d.y;
+              })
+              .on("drag", function(d) {
+                d.fx = d3.event.x; d.fy = d3.event.y;
+              })
+              .on("end", function(d) {
+                if (!d3.event.active) simulation.alphaTarget(0);
+                d.fx = d.fy = null;
+              }));
+      // Within the group, draw a box for the node position and text
+      // on the side.
+
+      var node_width = 150;
+      var node_height = 30;
+
+      node.append("rect")
+          .attr("r", "5px")
+          .attr("width", node_width)
+          .attr("height", node_height)
+          .attr("rx", function(d) { return d.group == 1 ? 1 : 10; })
+          .attr("stroke", "#000000")
+          .attr("fill", function(d) { return d.group == 1 ? "#dddddd" : "#000000"; })
+      node.append("text")
+          .text(function(d) { return d.name; })
+          .attr("x", 5)
+          .attr("y", 20)
+          .attr("fill", function(d) { return d.group == 1 ? "#000000" : "#eeeeee"; })
+      // Setup force parameters and update position callback
+
+
+      var node = svg.selectAll(".nodes")
+        .data(graph.nodes);
+
+      // Bind the links
+      var name_to_g = {}
+      node.each(function(data, index, nodes) {
+        console.log(data.id)
+        name_to_g[data.id] = this;
+      });
+
+      function proc(w, t) {
+        return parseInt(w.getAttribute(t));
+      }
+      edge.attr("d", function(d) {
+        function lerp(t, a, b) {
+          return (1.0-t) * a + t * b;
+        }
+        var x1 = proc(name_to_g[d.source],"x") + node_width /2;
+        var y1 = proc(name_to_g[d.source],"y") + node_height;
+        var x2 = proc(name_to_g[d.target],"x") + node_width /2;
+        var y2 = proc(name_to_g[d.target],"y");
+        var s = "M " + x1 + " " + y1
+            + " C " + x1 + " " + lerp(.5, y1, y2)
+            + " " + x2 + " " + lerp(.5, y1, y2)
+            + " " + x2  + " " + y2
+      return s;
+    });
+
+  }
+  buildGraph()
+</script>
+</div><h2>Buffers</h2>
+<table><tr>
+<tr>
+<th>index</th><th>data</th></tr>
+<tr>
+<td>0</td><td>--</td>
+</tr>
+<tr>
+<td>1</td><td>--</td>
+</tr>
+<tr>
+<td>2</td><td>--</td>
+</tr>
+<tr>
+<td>3</td><td>756 bytes</td>
+</tr>
+<tr>
+<td>4</td><td>112 bytes</td>
+</tr>
+<tr>
+<td>5</td><td>7056 bytes</td>
+</tr>
+<tr>
+<td>6</td><td>112 bytes</td>
+</tr>
+<tr>
+<td>7</td><td>7056 bytes</td>
+</tr>
+<tr>
+<td>8</td><td>112 bytes</td>
+</tr>
+<tr>
+<td>9</td><td>7056 bytes</td>
+</tr>
+<tr>
+<td>10</td><td>112 bytes</td>
+</tr>
+<tr>
+<td>11</td><td>7056 bytes</td>
+</tr>
+<tr>
+<td>12</td><td>112 bytes</td>
+</tr>
+<tr>
+<td>13</td><td>6804 bytes</td>
+</tr>
+<tr>
+<td>14</td><td>108 bytes</td>
+</tr>
+<tr>
+<td>15</td><td>6561 bytes</td>
+</tr>
+<tr>
+<td>16</td><td>108 bytes</td>
+</tr>
+<tr>
+<td>17</td><td>1 bytes</td>
+</tr>
+<tr>
+<td>18</td><td>--</td>
+</tr>
+<tr>
+<td>19</td><td>--</td>
+</tr>
+<tr>
+<td>20</td><td>--</td>
+</tr>
+<tr>
+<td>21</td><td>--</td>
+</tr>
+<tr>
+<td>22</td><td>--</td>
+</tr>
+<tr>
+<td>23</td><td>--</td>
+</tr>
+<tr>
+<td>24</td><td>--</td>
+</tr>
+<tr>
+<td>25</td><td>--</td>
+</tr>
+<tr>
+<td>26</td><td>--</td>
+</tr>
+<tr>
+<td>27</td><td>--</td>
+</tr>
+<tr>
+<td>28</td><td>--</td>
+</tr>
+<tr>
+<td>29</td><td>--</td>
+</tr>
+<tr>
+<td>30</td><td>--</td>
+</tr>
+<tr>
+<td>31</td><td>16 bytes</td>
+</tr>
+</table>
+<h2>Operator Codes</h2>
+<table><tr>
+<tr>
+<th>index</th><th>builtin_code</th><th>custom_code</th><th>version</th></tr>
+<tr>
+<td>0</td><td>QUANTIZE</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td><td>CONCATENATION</td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>2</td><td>CONV_2D</td>
+<td></td>
+<td>3</td>
+</tr>
+<tr>
+<td>3</td><td>ADD</td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td><td>DEPTH_TO_SPACE</td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td><td>MINIMUM</td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td><td>RELU</td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td><td>DEQUANTIZE</td>
+<td></td>
+<td>2</td>
+</tr>
+</table>
+</body></html>

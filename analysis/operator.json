@@ -1,0 +1,281 @@
+[
+      {
+            "index": 0,
+            "op_name": "QUANTIZE",
+            "inputs": {
+                  "array": [
+                        0
+                  ],
+                  "dtype": "int32"
+            },
+            "outputs": {
+                  "array": [
+                        1
+                  ],
+                  "dtype": "int32"
+            }
+      },
+      {
+            "index": 1,
+            "op_name": "CONCATENATION",
+            "inputs": {
+                  "array": [
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1
+                  ],
+                  "dtype": "int32"
+            },
+            "outputs": {
+                  "array": [
+                        17
+                  ],
+                  "dtype": "int32"
+            }
+      },
+      {
+            "index": 2,
+            "op_name": "CONV_2D",
+            "inputs": {
+                  "array": [
+                        1,
+                        2,
+                        3
+                  ],
+                  "dtype": "int32"
+            },
+            "outputs": {
+                  "array": [
+                        18
+                  ],
+                  "dtype": "int32"
+            }
+      },
+      {
+            "index": 3,
+            "op_name": "CONV_2D",
+            "inputs": {
+                  "array": [
+                        18,
+                        4,
+                        5
+                  ],
+                  "dtype": "int32"
+            },
+            "outputs": {
+                  "array": [
+                        19
+                  ],
+                  "dtype": "int32"
+            }
+      },
+      {
+            "index": 4,
+            "op_name": "CONV_2D",
+            "inputs": {
+                  "array": [
+                        19,
+                        6,
+                        7
+                  ],
+                  "dtype": "int32"
+            },
+            "outputs": {
+                  "array": [
+                        20
+                  ],
+                  "dtype": "int32"
+            }
+      },
+      {
+            "index": 5,
+            "op_name": "CONV_2D",
+            "inputs": {
+                  "array": [
+                        20,
+                        8,
+                        9
+                  ],
+                  "dtype": "int32"
+            },
+            "outputs": {
+                  "array": [
+                        21
+                  ],
+                  "dtype": "int32"
+            }
+      },
+      {
+            "index": 6,
+            "op_name": "CONV_2D",
+            "inputs": {
+                  "array": [
+                        21,
+                        10,
+                        11
+                  ],
+                  "dtype": "int32"
+            },
+            "outputs": {
+                  "array": [
+                        22
+                  ],
+                  "dtype": "int32"
+            }
+      },
+      {
+            "index": 7,
+            "op_name": "CONV_2D",
+            "inputs": {
+                  "array": [
+                        22,
+                        12,
+                        13
+                  ],
+                  "dtype": "int32"
+            },
+            "outputs": {
+                  "array": [
+                        23
+                  ],
+                  "dtype": "int32"
+            }
+      },
+      {
+            "index": 8,
+            "op_name": "CONV_2D",
+            "inputs": {
+                  "array": [
+                        23,
+                        14,
+                        15
+                  ],
+                  "dtype": "int32"
+            },
+            "outputs": {
+                  "array": [
+                        24
+                  ],
+                  "dtype": "int32"
+            }
+      },
+      {
+            "index": 9,
+            "op_name": "ADD",
+            "inputs": {
+                  "array": [
+                        17,
+                        24
+                  ],
+                  "dtype": "int32"
+            },
+            "outputs": {
+                  "array": [
+                        25
+                  ],
+                  "dtype": "int32"
+            }
+      },
+      {
+            "index": 10,
+            "op_name": "DEPTH_TO_SPACE",
+            "inputs": {
+                  "array": [
+                        25
+                  ],
+                  "dtype": "int32"
+            },
+            "outputs": {
+                  "array": [
+                        26
+                  ],
+                  "dtype": "int32"
+            }
+      },
+      {
+            "index": 11,
+            "op_name": "MINIMUM",
+            "inputs": {
+                  "array": [
+                        26,
+                        16
+                  ],
+                  "dtype": "int32"
+            },
+            "outputs": {
+                  "array": [
+                        27
+                  ],
+                  "dtype": "int32"
+            }
+      },
+      {
+            "index": 12,
+            "op_name": "RELU",
+            "inputs": {
+                  "array": [
+                        27
+                  ],
+                  "dtype": "int32"
+            },
+            "outputs": {
+                  "array": [
+                        28
+                  ],
+                  "dtype": "int32"
+            }
+      },
+      {
+            "index": 13,
+            "op_name": "QUANTIZE",
+            "inputs": {
+                  "array": [
+                        28
+                  ],
+                  "dtype": "int32"
+            },
+            "outputs": {
+                  "array": [
+                        29
+                  ],
+                  "dtype": "int32"
+            }
+      },
+      {
+            "index": 14,
+            "op_name": "DELEGATE",
+            "inputs": {
+                  "array": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        17
+                  ],
+                  "dtype": "int32"
+            },
+            "outputs": {
+                  "array": [
+                        26
+                  ],
+                  "dtype": "int32"
+            }
+      }
+]
