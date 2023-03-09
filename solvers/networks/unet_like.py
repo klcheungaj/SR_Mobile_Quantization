@@ -34,7 +34,7 @@ def Unet_like(scale=2, in_channels=3, num_fea=14, m=3, out_channels=3):
     ## upsampling
     for i in reversed(range(m)):
         num_fea = num_fea // 2
-        x = Conv2DTranspose(num_fea, 3, strides=2, padding='same', activation='relu', kernel_initializer=he_normal(), bias_initializer='zeros')(x)
+        x = Conv2DTranspose(num_fea, 2, strides=2, padding='same', activation='relu', kernel_initializer=he_normal(), bias_initializer='zeros')(x)
         x = Concatenate(axis=2)([x, featureMap[i]])
         x = DoubleConv(num_fea)(x)
 
